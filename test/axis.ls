@@ -59,11 +59,11 @@ test \#at ->
         difference: 10
         end: 0
         min-index: -1
-        max-index: 0
+        max-index: 1
         min: -12
-        max: 0
-        count: 1
-        length: 12
+        max: 12
+        count: 2
+        length: 24
     }
     expect @axis.at -10, -10 .to.include {
         offset: -10
@@ -78,8 +78,8 @@ test \#at ->
         length: 24
     }
 
-test \#grid ->
-    expect @axis.grid 1
+test \#cell ->
+    expect @axis.cell 1
     .to.eql @axis.at 12
-    expect @axis.grid 1, 2
+    expect @axis.cell 1, 2
     .to.eql @axis.at 12, 24

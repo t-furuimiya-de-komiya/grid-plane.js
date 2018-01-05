@@ -69,4 +69,11 @@ test '#indices' ->
 test '#stops' ->
     p = @axis.at -10, 20
     expect Array.from p.stops!
-    .to.eql [-12, 0, 12]
+    .to.eql [
+        * offset: -12
+          index: -1
+        * offset: 0
+          index: 0
+        * offset: 12
+          index: 1
+    ]

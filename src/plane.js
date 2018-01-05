@@ -20,9 +20,9 @@ module.exports = class GridPlane
         return this.at(0, 0, w, h)
     }
 
-    grid(i, j, m=1, n=m)
+    cell(i, j, m=1, n=m)
     {
-        return new GridRect(this.x.grid(i, m), this.y.grid(j, n))
+        return new GridRect(this.x.cell(i, m), this.y.cell(j, n))
     }
 
 }

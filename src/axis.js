@@ -13,7 +13,7 @@ module.exports = class GridAxis
         return new Segment(this, offset, length)
     }
 
-    grid(index=0, size=0)
+    cell(index=0, size=0)
     {
         return new Segment(this, index * this.step, size * this.step)
     }

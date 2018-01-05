@@ -28,7 +28,7 @@ const cls = module.exports = class GridSegment
     get maxIndex()
     {
         const val = Math.max(this.offset, this.end)
-        return Math.ceil(val / this.axis.step)
+        return Math.floor(val / this.axis.step) + 1
     }
 
     get min()
@@ -58,8 +58,8 @@ const cls = module.exports = class GridSegment
 
     *stops()
     {
-        for (let i of this.indices())
-            yield i * this.axis.step
+        for (let index of this.indices())
+            yield {index, offset: index * this.axis.step}
     }
 
     *indices()
